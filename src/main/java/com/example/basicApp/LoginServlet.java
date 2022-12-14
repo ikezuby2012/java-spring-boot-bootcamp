@@ -12,14 +12,14 @@ import java.io.PrintWriter;
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        PrintWriter out = response.getWriter();
-        String name = request.getParameter("name");
-        System.out.println(name);
-        out.println("<html>");
-        out.println("");
-        out.println("<head>");
-        out.println("<title>hello my new page</title>");
-        out.println("</head>");
-        out.println("</html>");
+//        PrintWriter out = response.getWriter();
+//        String name = request.getParameter("name");
+//        System.out.println(name);
+//        out.println("<html>");
+//        out.println("");
+//        out.println("<head>");
+//        out.println("<title>hello my new page</title>");
+//        out.println("</head>");
+//        out.println("</html>");
     }
 }
