@@ -1,6 +1,7 @@
 package com.example.basicApp.DTO;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class UserDto implements Serializable {
     private static final long serialVersionId = 48793878293847838L;
@@ -13,6 +14,15 @@ public class UserDto implements Serializable {
     private String encryptedPassword;
     private String emailVerificationToken;
     private boolean getEmailVerificationStatus = false;
+    private List<AddressDTO> address;
+
+    public List<AddressDTO> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<AddressDTO> address) {
+        this.address = address;
+    }
 
     public long getId() {
         return id;
@@ -85,4 +95,5 @@ public class UserDto implements Serializable {
     public void setGetEmailVerificationStatus(Boolean getEmailVerificationStatus) {
         this.getEmailVerificationStatus = getEmailVerificationStatus;
     }
+
 }

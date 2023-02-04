@@ -1,10 +1,13 @@
 package com.example.basicApp.entity;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.annotation.Id;
 
 import javax.annotation.processing.Generated;
 import java.io.Serializable;
+import java.util.List;
 
 @EntityScan(value = "users")
 public class UserEntity implements Serializable {
@@ -13,7 +16,6 @@ public class UserEntity implements Serializable {
     @Id
     @Generated(value = "")
     private long id;
-
     private String firstName;
     private String lastName;
     private String email;
@@ -22,11 +24,12 @@ public class UserEntity implements Serializable {
     private String emailVerificationToken;
     private boolean getEmailVerificationStatus = false;
 
+    @OneToMany(mappedBy = "userDetails", cascade = CascadeType.ALL)
+    private List<AddressEntity> address;
+
     private String userId;
 
-    public long getId() {
-        return id;
-    }
+    public long getId() { return id; }
 
     public void setId(long id) {
         this.id = id;
@@ -80,11 +83,11 @@ public class UserEntity implements Serializable {
         this.emailVerificationToken = emailVerificationToken;
     }
 
-    public Boolean getGetEmailVerificationStatus() {
+    public Boolean getEmailVerificationStatus() {
         return getEmailVerificationStatus;
     }
 
-    public void setGetEmailVerificationStatus(Boolean getEmailVerificationStatus) {
+    public void setEmailVerificationStatus(Boolean getEmailVerificationStatus) {
         this.getEmailVerificationStatus = getEmailVerificationStatus;
     }
 
@@ -94,5 +97,13 @@ public class UserEntity implements Serializable {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public List<AddressEntity> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<AddressEntity> address) {
+        this.address = address;
     }
 }

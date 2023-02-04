@@ -2,12 +2,23 @@ package com.example.basicApp.model.Request;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 public class UserRequestModel {
 
     private String fullName;
     private String lastName;
     private String email;
     private String password;
+    private List<AddressRequestModel> address;
+
+    public List<AddressRequestModel> getAddress() {
+        return address;
+    }
+
+    public void setAddress(List<AddressRequestModel> address) {
+        this.address = address;
+    }
 
     public String getFullName() {
         return fullName;

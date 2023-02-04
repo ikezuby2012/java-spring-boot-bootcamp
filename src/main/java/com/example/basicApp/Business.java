@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class Business {
 //    @Autowired
-//    private Dao dao;
+//    private Dao dao; PO$k%2sBu%
 //
 //    public String calculateSomething() {
 //        return dao.retrieveSomething();
